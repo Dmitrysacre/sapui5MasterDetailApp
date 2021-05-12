@@ -1,0 +1,29 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="SplitDemo.controller.Detail2" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Product Details" showNavButton="true" navButtonPress="onNavBack">
+				<VBox class="sapUiSmallMargin">
+					<f:SimpleForm editable="true" layout="ResponsiveGridLayout" title="Product Details">
+						<f:content>
+							<Label text="Product Status" />
+							<Text text="{productStatus}" />
+							<Label text="Name" />
+							<Text text="{productName}" />
+							<Label text="Description" />
+							<Text text="{productDescription}" />
+							<Label text="Size" />
+							<Text text="{productSize}" />
+							<Label text="Price" />
+							<Text text="{productPrice}" />
+						</f:content>
+					</f:SimpleForm>
+				</VBox>
+				<VBox class="sapUiSmallMargin">
+					<Image src="{productImage}" width="30%" height="30%" />
+				</VBox>
+				<Button text="Add to Cart" class="sapUiSmallMargin" />
+
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
