@@ -1,0 +1,65 @@
+<mvc:View
+	controllerName="app.controller.Cart"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page
+		title="{i18n>cartPageTitle}"
+		showNavButton="true"
+		navButtonPress="onNavBack"
+		showFooter="true">
+		<content>
+			<List
+				id="cart"
+				mode="Delete" 
+				delete="onDeleteProduct">
+				<items>
+					<ObjectListItem
+						icon="{
+							path : 'cartList>icon'
+						}"
+						title=""
+						number="{
+							path : 'cartList>currentPrice',
+							formatter: '.formatter.price'
+						}"
+						numberUnit="EUR"
+						press="onEntryListPress"
+						iconDensityAware="false" >
+						<attributes>
+							<ObjectAttribute
+								active="true"
+								press="onPressInfo"
+								text="information"/>
+						</attributes>
+						<firstStatus>
+							<ObjectStatus 
+								text="{
+									path: 'cartList>Status',
+									formatter: '.formatter.statusText'
+								}"
+								state="{
+									path : 'cartList>Status',
+									formatter : '.formatter.statusState'
+								}"/>
+						</firstStatus>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+		<footer>
+			<Toolbar>
+				<Text
+					text="Total: {
+						path : 'cartList>/cartList',
+						formatter : '.formatter.totalPrice'
+					} EUR" />
+				<ToolbarSpacer/>
+				<Button
+					type="Accept"
+					text="checkout"
+					press="onCheckout" />
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>
